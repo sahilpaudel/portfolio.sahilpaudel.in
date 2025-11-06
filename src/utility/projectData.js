@@ -1,5 +1,37 @@
 export const project = [
   {
+    name: "Thyrocare Lab System Migration & Automation",
+    stack: ["Java", "Spring Boot", "Kafka", "Redis", "MySQL", "AWS"],
+    logo: "pharmeasy.png",
+    contribution: "I led the migration of the legacy Thyrocare Lab System to a modular Spring Boot application with event-driven architecture using Kafka.",
+    description: "Developed a modular Spring Boot application (lims-layer) to migrate the legacy lab system, improving sample import API P95 by ~83% (handling 80-90k samples/day). Built an automation pipeline to process analyzer results via Kafka, enabling auto-release for 33% of workloads (~2.3M parameters/week) and significantly reducing manual intervention.",
+    year: 2025
+  },
+  {
+    name: "Analyzer PDF Report Automation",
+    stack: ["Java", "Spring Boot", "AWS S3"],
+    logo: "pharmeasy.png",
+    contribution: "I built an automation service to monitor analyzer-generated PDF reports and push them to AWS S3.",
+    description: "Developed a nationwide-deployed Java application to automatically monitor, process, and upload analyzer-generated PDF reports to S3. Enabled the business team to create a premium SKU using analyzer graph reports, generating an additional revenue with zero added processing cost.",
+    year: 2025
+  },
+  {
+    name: "Result Release API Optimization",
+    stack: ["Java", "Spring Boot", "Redis", "MySQL"],
+    logo: "pharmeasy.png",
+    contribution: "I optimized the result release process by replacing a stored procedure with a modern Spring Boot API and in-memory caching.",
+    description: "Re-engineered the result release API by migrating from stored procedures to a Spring Boot-based implementation. Cached static tables in-memory to reduce P95 latency by ~69%, increasing the release limit from 300 to 700 parameters per call, with throughput of 115k per day.",
+    year: 2024
+  },
+  {
+    name: "Product Display API & Catalog Redesign",
+    stack: ["NodeJS", "Koa", "Redis", "Kafka", "MySQL"],
+    logo: "pharmeasy.png",
+    contribution: "I was part of the Catalog Redesign team and led the migration of the Product Display API to a modular Node.js architecture.",
+    description: "Developed modular Node.js Koa APIs with efficient cache fallback handling to improve Catalog API P95 response time by ~63%. Significantly improved diagnostic page load times and reduced downstream service dependencies.",
+    year: 2022
+  },
+  {
     name: "Omnicron (Elasticsearch Cron)",
     stack: ["Python", "Kafka", "NodeJS", "Redis"],
     logo: "pharmeasy.png",

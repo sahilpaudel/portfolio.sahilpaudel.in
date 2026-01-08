@@ -1,0 +1,313 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;       /* Vibrant Blue */
+  --dark: #111827;          /* Almost Black */
+  --light: #f3f4f6;         /* Light Gray BG */
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --text-gray: #4b5563;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  /* Subtle background pattern */
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* LANDING / HERO SECTION */
+.hero-section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.greeting {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.name-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  background: -webkit-linear-gradient(45deg, #111827, #4b5563);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.role-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  margin-bottom: 32px;
+}
+
+.experience-badge {
+  display: inline-flex;
+  align-items: center; /* Keeps rocket, text, and dots perfectly leveled */
+  background: #e0e7ff;
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  white-space: nowrap; /* Prevents dots from wrapping to a new line */
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+/* SKILLS */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skill-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.skill-item:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 60px;
+}
+
+.social-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-gray);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+  40% {transform: translateY(-10px) translateX(-50%);}
+  60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+@media (max-width: 768px) {
+  .name-title { font-size: 3rem; }
+  .section-title { font-size: 2rem; }
+  .hero-section { height: auto; padding: 100px 0; }
+  .scroll-indicator { display: none; }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a slight delay for the projects so they "stagger" */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+
+/** The Moving Experience Dots **/
+.ticking-dots {
+  display: inline-flex;
+  margin-left: 4px;
+  font-family: monospace; /* Monospace helps with rhythmic spacing */
+}
+
+.ticking-dots span {
+  opacity: 0;
+  /* 'step-end' makes it jump instantly from 0 to 1 without fading */
+  animation: dot-tick 1.8s step-end infinite;
+}
+
+/* Staggered triggers for the 1, 2, and 3 dots */
+.ticking-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ticking-dots span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.ticking-dots span:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes dot-tick {
+  0% { opacity: 0; }
+  /* At 20% of the timeline, the dot "ticks" on and stays on */
+  20% { opacity: 1; }
+  /* It stays visible until the end of the 1.8s cycle, then resets */
+  100% { opacity: 1; }
+}
+
+/* 1. The Anchor */
+.rocket-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+/* 2. The Rocket itself */
+.flying-rocket {
+  font-size: 1.2rem;
+  z-index: 2; /* Sits above the glow */
+  display: inline-block;
+  animation: 
+    rocket-fly 3s ease-in-out infinite,
+    rocket-engine 0.2s ease-in-out infinite;
+}
+
+/* 3. THE EXHAUST PULSE (The glow effect) */
+.rocket-container::after {
+  content: '';
+  position: absolute;
+  /* Position it right behind the bottom-left of the rocket */
+  bottom: -2px;
+  left: -2px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ff6a00 0%, transparent 70%);
+  filter: blur(4px);
+  border-radius: 50%;
+  z-index: 1;
+  animation: exhaust-pulse 0.4s ease-in-out infinite alternate;
+}
+
+/* 4. The Animation Logic */
+@keyframes exhaust-pulse {
+  from {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0.9;
+    /* Optional: shift color slightly for fire effect */
+    background: radial-gradient(circle, #ffcc00 0%, transparent 70%);
+  }
+}
+
+/* Ensure these are still in your CSS from the previous step */
+@keyframes rocket-fly {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(5deg); }
+}
+
+@keyframes rocket-engine {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(0.5px, 0.5px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* The Blast Off Animation */
+.rocket-container.launching {
+  animation: blast-off 1.5s forwards cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+@keyframes blast-off {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  15% {
+    /* Pre-launch jitter */
+    transform: translate(-2px, 1px) rotate(-5deg);
+  }
+  30% {
+    /* Engine revving jitter */
+    transform: translate(2px, -1px) rotate(5deg);
+  }
+  100% {
+    /* Zoom out to the top right */
+    transform: translate(1000px, -1000px) scale(2) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Ensure the button looks clickable and professional */
+.btn-primary-action {
+  background: #2563eb;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary-action:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}

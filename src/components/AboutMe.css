@@ -1,0 +1,94 @@
+.about-refined-section {
+  padding: 100px 0 0 0; /* No bottom padding, the divider handles the gap */
+  background-color: transparent;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+  margin-bottom: 80px; /* Space before the line */
+}
+
+/* LEFT COLUMN ACCENT */
+.about-column-left {
+  position: relative;
+  padding-left: 35px;
+}
+
+.accent-bar {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px; /* Slightly thicker */
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+.vision-text {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.vision-blue {
+  color: #2563eb;
+}
+
+/* RIGHT COLUMN ACCENT */
+.bio-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.tech-accent {
+  font-weight: 600;
+  color: #1e293b;
+  border-bottom: 2px solid #cbd5e1; /* Bolder underline */
+}
+
+/* BOLD DEMARCATION STYLES */
+.section-divider-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* Creates the bridge to the next section */
+}
+
+.bold-horizontal-line {
+  width: 100%;
+  height: 2px; /* Thicker than before */
+  background: #e2e8f0; /* Solid slate color, no gradient */
+}
+
+.divider-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 2px solid #2563eb; /* Blue ring */
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+}

@@ -35,14 +35,14 @@ const floatingFlags = [
   { emoji: '🇳🇵', name: 'Nepal', right: '9%', y: '75%', drift: '9s', delay: '-7s', moveX: '-1.9rem', moveY: '-1.3rem', depth: 19 }
 ];
 
-const floatingCode = [
-  { text: 'const build = await ship(cleanArchitecture)', x: '10%', y: '16%', drift: '26s', delay: '-6s' },
-  { text: '101101 42 7.24ms 98.2%', x: '14%', y: '27%', drift: '22s', delay: '-10s' },
-  { text: '<Route path="/work" element={<Projects />} />', x: '12%', y: '39%', drift: '28s', delay: '-4s' },
-  { text: 'go test ./... && deploy --region ap-south-1', x: '8%', y: '52%', drift: '24s', delay: '-12s' },
-  { text: 'SELECT company, project, year FROM portfolio;', x: '47%', y: '12%', drift: '30s', delay: '-2s' },
-  { text: '{ latency: "47ms", uptime: "99.95%" }', x: '56%', y: '74%', drift: '27s', delay: '-7s' }
-];
+// const floatingCode = [
+//   { text: 'const build = await ship(cleanArchitecture)', x: '10%', y: '16%', drift: '26s', delay: '-6s' },
+//   { text: '101101 42 7.24ms 98.2%', x: '14%', y: '27%', drift: '22s', delay: '-10s' },
+//   { text: '<Route path="/work" element={<Projects />} />', x: '12%', y: '39%', drift: '28s', delay: '-4s' },
+//   { text: 'go test ./... && deploy --region ap-south-1', x: '8%', y: '52%', drift: '24s', delay: '-12s' },
+//   { text: 'SELECT company, project, year FROM portfolio;', x: '47%', y: '12%', drift: '30s', delay: '-2s' },
+//   { text: '{ latency: "47ms", uptime: "99.95%" }', x: '56%', y: '74%', drift: '27s', delay: '-7s' }
+// ];
 
 const primaryProfiles = profiles.filter((profile) =>
   ['Github', 'Instagram', 'Youtube', 'Twitter'].includes(profile.name)
@@ -608,8 +608,14 @@ function App() {
       return;
     }
 
-    setIsShellMinimized(false);
-    setIsShellClosing(true);
+    if (isShellMinimized) {
+      // Un-minimize first, wait for the max-height transition (320ms) to
+      // finish expanding before the shredder measures the panel height.
+      setIsShellMinimized(false);
+      setTimeout(() => setIsShellClosing(true), 340);
+    } else {
+      setIsShellClosing(true);
+    }
   };
 
   const reopenShellWindow = () => {

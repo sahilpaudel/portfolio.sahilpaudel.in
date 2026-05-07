@@ -1,6 +1,7 @@
 export const projects = [
   {
     name: "Thyrocare LIMS Migration",
+    company: "PharmEasy",
     stack: ["Java", "Spring Boot", "Kafka", "Redis", "MySQL", "AWS"],
     logo: "pharmeasy.png",
     contribution: "Modernized LIMS Platform",
@@ -10,6 +11,7 @@ export const projects = [
   },
   {
     name: "Analyzer PDF Automation",
+    company: "PharmEasy",
     stack: ["Java", "Spring Boot", "AWS S3"],
     logo: "pharmeasy.png",
     contribution: "Automated PDF Ingestion",
@@ -19,6 +21,7 @@ export const projects = [
   },
   {
     name: "Result Release Engine",
+    company: "PharmEasy",
     stack: ["Java", "Spring Boot", "Redis", "MySQL"],
     logo: "pharmeasy.png",
     contribution: "Optimized Release Engine",
@@ -28,6 +31,7 @@ export const projects = [
   },
   {
     name: "Catalog API Redesign",
+    company: "PharmEasy",
     stack: ["NodeJS", "Koa", "Redis", "Kafka", "MySQL"],
     logo: "pharmeasy.png",
     contribution: "Redesigned Catalog APIs",
@@ -37,6 +41,7 @@ export const projects = [
   },
   {
     name: "Omnicron ES Pipeline",
+    company: "PharmEasy",
     stack: ["Python", "Kafka", "NodeJS", "Redis"],
     logo: "pharmeasy.png",
     contribution: "Built ES Pipeline",
@@ -46,6 +51,7 @@ export const projects = [
   },
   {
     name: "Oracle Q&A Platform",
+    company: "PharmEasy",
     stack: ["Go", "Kafka", "React", "Ant Design"],
     logo: "pharmeasy.png",
     contribution: "Developed Q&A Platform",
@@ -55,6 +61,7 @@ export const projects = [
   },
   {
     name: "Cull A/B Dashboard",
+    company: "PharmEasy",
     stack: ["Go", "MongoDB", "React", "Material-UI"],
     logo: "pharmeasy.png",
     contribution: "Built A/B Dashboard",
@@ -64,6 +71,7 @@ export const projects = [
   },
   {
     name: "Cyborg Validation Engine",
+    company: "Envestnet Yodlee",
     stack: ["Spring Boot", "MongoDB", "ReactJS", "Material-UI"],
     logo: "yodlee.png",
     contribution: "Built Validation Engine",
@@ -73,6 +81,7 @@ export const projects = [
   },
   {
     name: "PAR Scraping Technique",
+    company: "Envestnet Yodlee",
     stack: ["Core Java", "Vanilla JavaScript", "Selenium"],
     logo: "yodlee.png",
     contribution: "Invented PAR Scraping",
